@@ -198,6 +198,7 @@ IF_ID IF_ID{
 };
 
 ID_EX ID_EX{
+	.clk_i	(clk_i),
 	.WB_i		(MUX8_o),
 	.WB_o		(EX_MEM.WB_i),
 	.M_i		(MUX8_o),
@@ -224,6 +225,7 @@ ID_EX ID_EX{
 };
 
 EX_MEM EX_MEM{
+	.clk_i	(clk_i),
 	.WB_i		(ID_EX.WB_o),
 	.WB_o		(EX_MEM_WB_o),
 	.M_i		(ID_EX_M_o),
@@ -238,6 +240,7 @@ EX_MEM EX_MEM{
 };
 
 MEM_W MEM_WB{
+	.clk_i	(clk_i),
 	.WB_i		(EX_MEM_WB_o),
 	.WB_o_1		(MEM_WB_WB_o_1),
 	.WB_o_2		(MUX5.control_i),	//MemToReg
