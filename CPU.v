@@ -36,35 +36,35 @@ Adder Add{
 
 //MUX5 MUX32_2 MUX32_3 MUX2_6
 
-MUX1{
+MUX32_2 MUX1{
 	.data1_i	(Add.data_o),
 	.data2_i	(Add_PC_o),
 	.control_i	(and_gate_o),				
 	.data_o		(MUX1_o)
 };
 
-MUX2{
+MUX32_2 MUX2{
 	.data1_i	(MUX1_o),
 	.data2_i	(),
 	.control_i	(JUMP),
 	.data_o		(PC.pc_i)
 };
 
-MUX3{
+MUX5_2 MUX3{
 	.data1_i	(ID_EX_inst4_o),
 	.data2_i	(ID_EX.inst5_o),
 	.control_i	(ID_EX.EX_o_3),
 	.data_o		(EX_MEM.MUX3_i)
 };
 
-MUX4{
+MUX32_2 MUX4{
 	.data1_i	(MUX7_o),
 	.data2_i	(ID_EX_inst1_o),
 	.control_i	(ID_EX.EX_o_1),
 	.data_o		(ALU.data2_i)
 };
 
-MUX5{
+MUX32_2 MUX5{
 	.data1_i	(MEM_WB.ReadData_o),
 	.data2_i	(MEM_WB.addr_o),
 	.control_i	(MEM_WB.WB_o_2),
