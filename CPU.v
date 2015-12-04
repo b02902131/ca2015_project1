@@ -15,6 +15,11 @@ wire	ID_EX_inst4_o, ID_EX_M_o, ID_EX_inst1_o;
 wire	MEM_WB_MUX3_o, MEM_WB_WB_o_1;
 wire	[31:0]	inst;
 
+wire	and_gate_o, and_gate1_i, and_gate2_i;
+and		and_gate(and_gate_o, and_gate1_i, and_gate2_i);
+
+wire 	or_gate_o,
+or		or_gate(or_gate_o, JUMP, and_gate_o);
 
 
 Adder Add_PC{
@@ -34,7 +39,7 @@ Adder Add{
 MUX1{
 	.data1_i	(Add.data_o),
 	.data2_i	(Add_PC_o),
-	.control_i	(),				
+	.control_i	(and_gate_o),				
 	.data_o		(MUX1_o)
 };
 
@@ -133,7 +138,7 @@ Sign_Extend Sign_Extend{
 Eq Eq{
 	.data1_i	(Reg_RS),
 	.data2_i	(Reg_RT),
-	.data_o		()
+	.data_o		(and_gate1_1)
 };
 
 HD HD{
@@ -148,7 +153,7 @@ HD HD{
 Control Control{
 	.Op_i		(inst),
 	.MUX8_o		(MUX8.data1_i),
-	.Branch_o	(),
+	.Branch_o	(and_gate2_i),
 	.Jump_o		(JUMP)
 };
 
@@ -195,7 +200,7 @@ IF_ID IF_ID{
 	.ReadData_i	(Instruction_memory.instr_o),
 	.ReadData_o	(inst),
 	.HD_i		(HD.IF_ID_o),
-	.Flush_i	()
+	.Flush_i	(or_gate_o)
 };
 
 ID_EX ID_EX{
