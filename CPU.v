@@ -71,7 +71,7 @@ MUX5{
 	.data_o		(MUX5_o)
 };
 
-MUX5_3 MUX6{
+MUX32_3 MUX6{
 	.data1_i	(ID_EX.MUX6_o),
 	.data2_i	(MUX5_o),
 	.data3_i	(EX_MEM_ALU_o),
@@ -79,7 +79,7 @@ MUX5_3 MUX6{
 	.data_o		(ALU.data1_i)
 };
 
-MUX5_3 MUX7{
+MUX32_3 MUX7{
 	.data1_i	(ID_EX.MUX7_o),
 	.data2_i	(MUX5_o),
 	.data3_i	(EX_MEM_ALU_o),
