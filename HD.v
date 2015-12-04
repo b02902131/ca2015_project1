@@ -1,0 +1,30 @@
+module HD{
+	.ID_EX_M_i,
+	.IF_ID_o,
+	.inst_i,
+	.MUX8_o,
+	.ID_EX_inst4,
+	.PC_o
+};
+
+input   ID_EX_M_i;
+input   [31:0]  inst_i;      //I
+input   [4:0]   ID_EX_inst4;
+output  IF_ID_o, MUX8_o, PC_o;
+
+//If (ID/EX.MemRead and ((ID/EX.RegisterRt = IF/ID.RegisterRs[21:25]) or  (ID/EX.RegisterRt = IF/ID.REgisterRt[20:16]))) 
+always @( ID_EX_M_i or inst_i or ID_EX_inst4)begin
+    if( ID_EX_M_i == 3'b010 and ((ID_EX_inst4 ==  inst_i[25:21]) or (ID_EX_inst4 == inst_i[20:16])))begin
+        MUX8_o = 1'b1;
+        PC_o   = 1'b1; // 1 is for stall TODO
+        IF_ID_o= 1'b1; // 1 is for stall TODO
+    end
+    else begin
+        MUX8_o = 1'b0;
+        PC_o   = 1'b0;
+        IF_ID_o= 1'b0;
+    end
+end
+endmodule
+
+
