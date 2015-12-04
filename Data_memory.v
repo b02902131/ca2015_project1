@@ -12,7 +12,7 @@ output  [31:0]      ReadData_o;
 input   MemWrite_i, MemRead_i;
 
 // Data memory
-reg     [31:0]     memory  [0:255];
+reg     [31:0]     memory  [0:8];
 
 always @(MemWrite_i or MemRead_i or Addr_i or WriteData_i)begin
     if(MemWrite_i)

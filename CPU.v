@@ -11,7 +11,8 @@ wire 	MUX1_o, MUX8_o, MUX5_o, MUX7_o;
 wire 	Reg_RS, Reg_RT;
 wire	Sign_o;
 wire 	EX_MEM_ALU_o, EX_MEM_WB_o, EX_MEM_MUX3_o;
-wire	ID_EX_inst4_o, ID_EX_M_o, ID_EX_inst1_o;
+wire	ID_EX_inst4_o, ID_EX_inst1_o;
+wire 	[2:0] ID_EX_M_o;
 wire	MEM_WB_MUX3_o, MEM_WB_WB_o_1;
 wire	[31:0]	inst;
 
@@ -142,7 +143,7 @@ Eq Eq{
 };
 
 HD HD{
-	.ID_EX_M_i	(ID_EX_M_o),
+	.ID_EX_M_i	(ID_EX_M_o[1]),
 	.IF_ID_o	(IF_ID.HD_i),
 	.inst_i		(inst),
 	.MUX8_o		(MUX8.control_i),

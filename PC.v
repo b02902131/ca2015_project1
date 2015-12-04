@@ -4,7 +4,7 @@ module PC{
 	.start_i,
 	.pc_i,
 	.pc_o,
-	.hd_i
+	.hd_i  // 1'b01 if stall
 };
 
 // Ports
@@ -19,7 +19,7 @@ output  [31:0]      pc_o;
 reg     [31:0]      pc_o;
 
 
-always@(posedge clk_i or negedge rst_i) begin
+always@(posedge clk_i or negedge rst_i or hd_i) begin
     if(~rst_i) begin
         pc_o <= 32'b0;
     end

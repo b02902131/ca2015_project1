@@ -5,3 +5,8 @@ ca2015_project1
 * Shift.v 
 * Shift26.v
 
+
+TODO:
+1.HD
+	pc hd_i
+	IF_ID
