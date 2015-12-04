@@ -87,7 +87,7 @@ MUX32_3 MUX7{
 	.data_o		(MUX7_o)
 };
 //MUX8 maybe 7 input
-MUX8{
+MUX8 MUX8{
 	.data1_i	(Control.MUX8_o),
 	.data2_i	(32'd0),
 	.control_i	(HD.MUX8_o),
