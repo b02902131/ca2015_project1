@@ -189,6 +189,7 @@ Data_memory{
 
 
 IF_ID IF_ID{
+    .clk_i  (clk_i),
 	.PC_i		(Add_PC_o),
 	.PC_o		(IF_ID_PC_o),
 	.ReadData_i	(Instruction_memory.instr_o),
