@@ -17,6 +17,7 @@ always @(data1_i or data2_i or ALUControl_i)begin
         3'b001: data_o = data1_i | data2_i; //or
         3'b000: data_o = data1_i & data2_i; //and
         3'b100: data_o = data1_i * data2_i; //mul
+        
         3'b111: //slt
         begin   
             if( data1_i < data2_i)
