@@ -1,4 +1,4 @@
-module MUX5_3{
+module MUX32_3{
 	data1_i,
 	data2_i,
 	data3_i,
