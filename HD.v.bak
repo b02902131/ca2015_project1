@@ -10,7 +10,7 @@ module HD(
 input   ID_EX_M_i;
 input   [31:0]  inst_i;      //I
 input   [4:0]   ID_EX_inst4;
-output  IF_ID_o, MUX8_o, PC_o;
+output  reg IF_ID_o, MUX8_o, PC_o;
 
 //If (ID/EX.MemRead and ((ID/EX.RegisterRt = IF/ID.RegisterRs[21:25]) or  (ID/EX.RegisterRt = IF/ID.REgisterRt[20:16]))) 
 always @( ID_EX_M_i or inst_i or ID_EX_inst4)begin

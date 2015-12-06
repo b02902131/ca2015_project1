@@ -16,9 +16,14 @@ module EX_MEM(
 //ports
 input clk_i;
 input   [2:0]   M_i;
-input   WB_i, ALU_i, MUX7_i;
+input   [1:0]   WB_i;
+input   [31:0]  ALU_i,
+input   [31:0]  MUX7_i;
 input [31:0] MUX3_i;
-output reg WB_o, M_o_1, M_o_2, ALU_o, MUX7_o;
+output reg [1:0]  WB_o,
+output reg M_o_1, M_o_2;
+output reg [31:0] ALU_o;
+output reg [31:0] MUX7_o;
 output reg [31:0] MUX3_o;
 
 always @(posedge clk_i)begin

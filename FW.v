@@ -17,8 +17,9 @@ module FW(
 //data6: ID/EX.Rs
 //MUX6 : ForwardA
 //MUX7 : ForwardB
-input   data1_i,data2_i,data3_i,data4_i,data5_i,data6_i;
-output  reg MUX6_o, MUX7_o;
+input   [4:0]	data1_i, data3_i, data5_i, data6_i;
+input	[1:0]	data2_i, data4_i;
+output  reg [1:0]	MUX6_o, MUX7_o;
 
 
 always @(data1_i or data2_i or data3_i or data4_i or data5_i or data6_i)begin

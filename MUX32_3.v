@@ -7,7 +7,7 @@ module MUX32_3(
 );
 
 input [31:0] data1_i, data2_i, data3_i;
-input control_i;
+input [1:0]  control_i;
 output [31:0] data_o;
 reg [31:0] data_o;
 
