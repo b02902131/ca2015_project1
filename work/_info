@@ -71,8 +71,29 @@ r1
 !i113 1
 R3
 n@a@l@u_@control
+vControl
+!s110 1449388353
+!i10b 1
+!s100 0dZmCQG]O^?o==J:HC4Cz3
+ImZ=IJJ_j4I2N;;h_Ii[iR0
+R0
+R1
+w1449388337
+8C:/Users/student/Desktop/ca2015_project1/Control.v
+FC:/Users/student/Desktop/ca2015_project1/Control.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1449388353.261000
+!s107 C:/Users/student/Desktop/ca2015_project1/Control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Control.v|
+!i113 1
+R3
+n@control
 vCPU
-!s110 1449387966
+!s110 1449388538
 !i10b 1
 !s100 N73JbAAAa^oalV;bi?E050
 I7LHa?G<>zgAKWDj4768jB2
@@ -86,7 +107,7 @@ R2
 r1
 !s85 0
 31
-!s108 1449387966.690000
+!s108 1449388538.231000
 !s107 C:/Users/student/Desktop/ca2015_project1/CPU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/CPU.v|
 !i113 1
@@ -113,6 +134,27 @@ r1
 !i113 1
 R3
 n@data_memory
+vEq
+!s110 1449388684
+!i10b 1
+!s100 ?=bgd04KO7PJhPc]e]5X30
+IKN18KRf`I:Hh5z3o9RiSm0
+R0
+R1
+w1449388683
+8C:/Users/student/Desktop/ca2015_project1/Eq.v
+FC:/Users/student/Desktop/ca2015_project1/Eq.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1449388684.625000
+!s107 C:/Users/student/Desktop/ca2015_project1/Eq.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Eq.v|
+!i113 1
+R3
+n@eq
 vEX_MEM
 !s110 1449387029
 !i10b 1
@@ -428,6 +470,48 @@ R9
 !i113 1
 R3
 n@shift26
+vSign_Extend
+!s110 1449388769
+!i10b 1
+!s100 LU]C@2gR=:0D>UDYdUYUG3
+I9O?VK3i>ElEU@lGDgKJol1
+R0
+R1
+w1449388711
+8C:/Users/student/Desktop/ca2015_project1/Sign_Extend.v
+FC:/Users/student/Desktop/ca2015_project1/Sign_Extend.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1449388769.813000
+!s107 C:/Users/student/Desktop/ca2015_project1/Sign_Extend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Sign_Extend.v|
+!i113 1
+R3
+n@sign_@extend
+vSigned_Extend
+!s110 1449388543
+!i10b 1
+!s100 QkOPf_5Gni`9?R3Oejl=@2
+IAR53MGLI25]ZbKgWmj<Jf1
+R0
+R1
+w1449388537
+8C:/Users/student/Desktop/ca2015_project1/Signed_Extend.v
+FC:/Users/student/Desktop/ca2015_project1/Signed_Extend.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1449388543.925000
+!s107 C:/Users/student/Desktop/ca2015_project1/Signed_Extend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Signed_Extend.v|
+!i113 1
+R3
+n@signed_@extend
 vTestBench
 R4
 !i10b 1

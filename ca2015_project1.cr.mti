@@ -1,4 +1,11 @@
-C:/Users/student/Desktop/ca2015_project1/Shift.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Shift.v
+C:/Users/student/Desktop/ca2015_project1/Eq.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Eq.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Eq
+
+Top level modules:
+	Eq
+
+} {} {}} C:/Users/student/Desktop/ca2015_project1/Shift.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Shift.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling module Shift
 
@@ -18,6 +25,13 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 
 Top level modules:
 	MUX5_2
+
+} {} {}} C:/Users/student/Desktop/ca2015_project1/Control.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Control.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Control
+
+Top level modules:
+	Control
 
 } {} {}} C:/Users/student/Desktop/ca2015_project1/ID_EX.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/ID_EX.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
@@ -68,6 +82,27 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	Shift26
 
+} {} {}} C:/Users/student/Desktop/ca2015_project1/Adder.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Adder.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} C:/Users/student/Desktop/ca2015_project1/testbench.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/testbench.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module TestBench
+
+Top level modules:
+	TestBench
+
+} {} {}} C:/Users/student/Desktop/ca2015_project1/MUX32_2.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MUX32_2.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module MUX32_2
+
+Top level modules:
+	MUX32_2
+
 } {} {}} C:/Users/student/Desktop/ca2015_project1/CPU.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/CPU.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling module CPU
@@ -82,27 +117,6 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	Registers
 
-} {} {}} C:/Users/student/Desktop/ca2015_project1/MUX32_2.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MUX32_2.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module MUX32_2
-
-Top level modules:
-	MUX32_2
-
-} {} {}} C:/Users/student/Desktop/ca2015_project1/testbench.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/testbench.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module TestBench
-
-Top level modules:
-	TestBench
-
-} {} {}} C:/Users/student/Desktop/ca2015_project1/Adder.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Adder.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module Adder
-
-Top level modules:
-	Adder
-
 } {} {}} C:/Users/student/Desktop/ca2015_project1/MUX32_3.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MUX32_3.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling module MUX32_3
@@ -110,12 +124,12 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	MUX32_3
 
-} {} {}} C:/Users/student/Desktop/ca2015_project1/Instruction_Memory.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Instruction_Memory.v
+} {} {}} C:/Users/student/Desktop/ca2015_project1/ALU_Control.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/ALU_Control.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module Instruction_Memory
+-- Compiling module ALU_Control
 
 Top level modules:
-	Instruction_Memory
+	ALU_Control
 
 } {} {}} C:/Users/student/Desktop/ca2015_project1/MUX8.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MUX8.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
@@ -124,12 +138,12 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	MUX8
 
-} {} {}} C:/Users/student/Desktop/ca2015_project1/ALU_Control.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/ALU_Control.v
+} {} {}} C:/Users/student/Desktop/ca2015_project1/Instruction_Memory.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Instruction_Memory.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module ALU_Control
+-- Compiling module Instruction_Memory
 
 Top level modules:
-	ALU_Control
+	Instruction_Memory
 
 } {} {}} C:/Users/student/Desktop/ca2015_project1/HD.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/HD.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
