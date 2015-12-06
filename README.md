@@ -10,3 +10,6 @@ TODO:
 1.HD
 	pc hd_i
 	IF_ID
+
+
+try use window's git bash
