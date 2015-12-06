@@ -1,11 +1,11 @@
-module PC(
-	clk_i,
-	rst_i,
-	start_i,
-	pc_i,
-	pc_o,
-	hd_i  // 1'b01 if stall
-);
+module PC{
+	.clk_i,
+	.rst_i,
+	.start_i,
+	.pc_i,
+	.pc_o,
+	.hd_i  // 1'b01 if stall
+};
 
 // Ports
 input               clk_i;

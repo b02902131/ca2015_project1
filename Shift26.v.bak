@@ -1,4 +1,4 @@
-module Shift26(
+module Shift(
 	data_i,
 	data_o
 );

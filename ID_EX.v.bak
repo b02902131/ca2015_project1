@@ -34,7 +34,7 @@ output  reg inst1_o, inst2_o, inst3_o, inst4_o, inst5_o;
 output  reg MUX6_o, MUX7_o;
 
 
-always @(posedge clk_i) begin
+always (posedge clk_i) begin
     WB_o = WB_i;
     M_o = M_i;
     //TODO EX!!

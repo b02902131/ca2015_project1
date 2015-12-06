@@ -1,12 +1,12 @@
-module MUX32_2{
+module MUX32_2(
 	data1_i,
 	data2_i,
 	control_i,
 	data_o
-}
+);
 
 input [31:0] data1_i, data2_i;
-input select_i;
+input control_i;
 output [31:0] data_o;
 reg [31:0] data_o;
 

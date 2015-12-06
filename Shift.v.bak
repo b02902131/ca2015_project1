@@ -1,7 +1,7 @@
-module Shift(
+module Shift{
 	data_i,
 	data_o
-);
+};
 
 input data_i;
 output data_o;

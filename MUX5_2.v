@@ -1,12 +1,12 @@
-module MUX5_2{
+module MUX5_2(
 	data1_i,
 	data2_i,
 	control_i,
 	data_o
-}
+);
 
 input [4:0] data1_i, data2_i;
-input select_i;
+input control_i;
 output reg [4:0] data_o;
 
 always@(data1_i or data2_i or control_i) begin

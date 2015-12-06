@@ -7,7 +7,7 @@ module Registers(
     	RegWrite_i, 
    	RSdata_o, 
     	RTdata_o
-);
+};
 
 input               clk_i;
 input   [4:0]       RSaddr_i;
