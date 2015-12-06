@@ -158,7 +158,7 @@ HD HD(
 );
 
 Control Control(
-	.Op_i		(inst[31:27]),
+	.Op_i		(inst[31:26]),
 	.MUX8_o		(MUX8.data1_i),
 	.Branch_o	(and_gate2_i),
 	.Jump_o		(JUMP)
@@ -212,11 +212,11 @@ IF_ID IF_ID(
 
 ID_EX ID_EX(
 	.clk_i	(clk_i),
-	.WB_i		(MUX8_o),
+	.WB_i		(MUX8_o[8:7]),
 	.WB_o		(EX_MEM.WB_i),
-	.M_i		(MUX8_o),
+	.M_i		(MUX8_o[6:4]),
 	.M_o		(ID_EX_M_o),
-	.EX_i		(MUX8_o),
+	.EX_i		(MUX8_o[3:0]),
 	.EX_o_1		(MUX4.control_i),
 	.EX_o_2		(ALU_Control.ALUOp_i),
 	.EX_o_3		(MUX3.control_i),

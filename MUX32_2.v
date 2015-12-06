@@ -14,6 +14,7 @@ always@(data1_i or data2_i or control_i) begin
 	case(control_i) 
 		1'b0: data_o = data1_i;
 		1'b1: data_o = data2_i;
+		default: data_o = (data1_i)?data1_i:data2_i;
 	endcase
 end
 

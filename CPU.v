@@ -103,7 +103,6 @@ MUX8 MUX8(
 
 PC PC(
 	.clk_i	(clk_i),
-	.rst_i	(rst_i),
 	.start_i(start_i),
 	.pc_i	(MUX2.data_o),
 	.pc_o	(PC_o),
