@@ -16,10 +16,14 @@ output reg PC_o;
 output reg [31:0]	ReadData_o;
 
 always @(posedge clk_i)begin
-   if(Flush_i == 1'b1) begin   
+   if(HD_i == 1'b0) begin   		//can sent to the next step
+	if(Flush_i ==1'b0)begin
 	   PC_o = PC_i;
 	   ReadData_o = ReadData_i;
-	end
+	else
+	   PC_o = 1'b0;
+	   ReadData_o = 32'b0;
+   end
 
 end
 

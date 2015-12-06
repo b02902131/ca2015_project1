@@ -17,7 +17,7 @@ module MEM_WB(
 input   clk_i;
 input   [1:0]   WB_i;
 input   [31:0] ReadData_i;
-output reg WB_o_1, WB_o_2, 
+output reg WB_o_1, WB_o_2;
 output reg [31:0] ReadData_o;
 input   [31:0] addr_i;
 input   [4:0]  MUX3_i;
