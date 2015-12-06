@@ -18,27 +18,27 @@ module FW(
 //MUX6 : ForwardA
 //MUX7 : ForwardB
 input   [4:0]	data1_i, data3_i, data5_i, data6_i;
-input	[1:0]	data2_i, data4_i;
+input	data2_i, data4_i;
 output  reg [1:0]	MUX6_o, MUX7_o;
 
 
 always @(data1_i or data2_i or data3_i or data4_i or data5_i or data6_i)begin
     //ForwardA
     //if (EX/MEM.RegWrite) and (EX/MEM.RegisterRd ≠ 0) and (EX/MEM.RegisterRd=ID/EX.RegisterRs))  ForwardA = 10 
-    if(data2_i == 2'b1x && data1_i != 5'b00000 && data1_i==data6_i)
+    if(data2_i == 1'b1 && data1_i != 5'b00000 && data1_i==data6_i)
         MUX6_o = 2'b10;
     //if (MEM/WB.RegWrite) and (MEM/WB.RegisterRd ≠ 0) and (MEM/WB.RegisterRd=ID/Ex.RegisterRs))   ForwardA = 01 
-    else if(data4_i == 2'b1x && data3_i != 5'b00000 && data3_i == data6_i)
+    else if(data4_i == 1'b1 && data3_i != 5'b00000 && data3_i == data6_i)
         MUX6_o = 2'b01;
     else
         MUX6_o = 2'b00;
 
     //ForwardB
     //if (EX/MEM.RegWrite) and (EX/MEM.RegisterRd ≠ 0) and (EX/MEM.RegisterRd=ID/Ex.RegisterRt))   ForwardB = 10 
-    if( data2_i == 2'b1x && data1_i != 5'b00000 && data1_i == data5_i)
+    if( data2_i == 1'b1 && data1_i != 5'b00000 && data1_i == data5_i)
         MUX7_o = 2'b10;
     //if (MEM/WB.RegWrite) and (MEM/WB.RegisterRd ≠ 0) and (MEM/WB.RegisterRd=ID/Ex.RegisterRt))   ForwardB = 01 
-    else if(data4_i == 2'b1x && data3_i != 5'b00000 && data3_i == data5_i)
+    else if(data4_i == 1'b1 && data3_i != 5'b00000 && data3_i == data5_i)
         MUX7_o = 2'b01;
     else
         MUX7_o = 2'b00;

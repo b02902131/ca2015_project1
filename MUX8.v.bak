@@ -6,7 +6,7 @@ module MUX8(
 );
 
 input [31:0] data1_i, data2_i;
-input select_i;
+input control_i;
 output reg [8:0] data_o;
 
 always@(data1_i or data2_i or control_i) begin

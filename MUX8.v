@@ -5,7 +5,7 @@ module MUX8(
 	data_o	
 );
 
-input [31:0] data1_i, data2_i;
+input [8:0] data1_i, data2_i;
 input control_i;
 output reg [8:0] data_o;
 

@@ -7,7 +7,7 @@ module HD(
 	PC_o
 );
 
-input   ID_EX_M_i;
+input   [2:0]	ID_EX_M_i;
 input   [31:0]  inst_i;      //I
 input   [4:0]   ID_EX_inst4;
 output  reg IF_ID_o, MUX8_o, PC_o;

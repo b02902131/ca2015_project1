@@ -31,10 +31,15 @@ input   [1:0]WB_i;
 input	[2:0]M_i;
 input 	PC_i;
 input   [31:0]ReadData1_i, ReadData2_i;
-output  reg WB_o, M_o, EX_o_1, EX_o_2, EX_o_3;
-input   inst1_i, inst2_i, inst3_i, inst4_i, inst5_i;
-output  reg inst1_o, inst2_o, inst3_o, inst4_o, inst5_o;
-output  reg MUX6_o, MUX7_o;
+output  reg [1:0]WB_o;
+output  reg [2:0]M_o;
+output  reg EX_o_1, EX_o_3;
+output  reg [1:0]EX_o_2;
+input	[31:0]	inst1_i;
+input   [4:0]	inst2_i, inst3_i, inst4_i, inst5_i;
+output	reg [31:0]inst1_o;
+output  reg [4:0]inst2_o, inst3_o, inst4_o, inst5_o;
+output  reg [31:0]MUX6_o, MUX7_o;
 
 
 always @(posedge clk_i) begin

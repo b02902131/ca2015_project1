@@ -9,10 +9,10 @@ module IF_ID(
 );
 
 //Ports
-input   PC_i;
+input   [31:0]	PC_i;
 input 	[31:0]	ReadData_i;
 input   HD_i, Flush_i, clk_i;
-output reg PC_o;
+output reg [31:0]	PC_o;
 output reg [31:0]	ReadData_o;
 
 always @(posedge clk_i)begin

@@ -7,14 +7,14 @@ module HD(
 	PC_o
 );
 
-input   [2:0]	ID_EX_M_i;
+input   	ID_EX_M_i;
 input   [31:0]  inst_i;      //I
 input   [4:0]   ID_EX_inst4;
 output  reg IF_ID_o, MUX8_o, PC_o;
 
 //If (ID/EX.MemRead and ((ID/EX.RegisterRt = IF/ID.RegisterRs[21:25]) or  (ID/EX.RegisterRt = IF/ID.REgisterRt[20:16]))) 
 always @( ID_EX_M_i or inst_i or ID_EX_inst4)begin
-    if( ID_EX_M_i == 3'b010 && ((ID_EX_inst4 ==  inst_i[25:21]) || (ID_EX_inst4 == inst_i[20:16])))begin
+    if( ID_EX_M_i == 1'b1 && ((ID_EX_inst4 ==  inst_i[25:21]) || (ID_EX_inst4 == inst_i[20:16])))begin
         MUX8_o = 1'b1;
         PC_o   = 1'b1; // 1 is for stall TODO
         IF_ID_o= 1'b1; // 1 is for stall TODO
