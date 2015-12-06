@@ -1,4 +1,4 @@
-module Data_memory(
+module Data_Memory(
 	MemWrite_i,
 	MemRead_i,
 	Addr_i,
@@ -10,15 +10,24 @@ module Data_memory(
 input   [31:0]      Addr_i, WriteData_i;
 output  reg [31:0]      ReadData_o;
 input   MemWrite_i, MemRead_i;
-
+integer addr0, i;
 // Data memory
-reg     [31:0]     memory  [0:8];
+reg     [7:0]     memory  [0:31];
 
 always @(MemWrite_i or MemRead_i or Addr_i or WriteData_i)begin
-    if(MemWrite_i)
-        memory[Addr_i>>2] = WriteData_i;
-    if(MemRead_i)
-        ReadData_o = memory[Addr_i>>2];  
+	addr0 = Addr_i>>2;
+	if(MemWrite_i) begin
+		memory[addr0] = WriteData_i[0:7];
+		memory[addr0+1] = WriteData_i[8:15];
+		memory[addr0+2] = WriteData_i[16:23];
+		memory[addr0+3] = WriteData_i[24:31];
+	end		
+	if(MemRead_i) begin
+		ReadData_o[0:7] = memory[addr0];
+		ReadData_o[8:15] = memory[addr0+1];
+		ReadData_o[16:23] = memory[addr0+2];
+		ReadData_o[24:31] = memory[addr0+3];
+	end
 end
 endmodule
 

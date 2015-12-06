@@ -25,8 +25,8 @@ initial begin
     end
     
     // initialize data memory
-    for(i=0; i<8; i=i+1) begin
-        CPU.Data_Memory.memory[i] = 32'b0;
+    for(i=0; i<32; i=i+1) begin
+        CPU.Data_Memory.memory[i] = 8'b0;
     end    
         
     // initialize Register File

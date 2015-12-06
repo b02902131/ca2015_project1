@@ -40,13 +40,6 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	Control
 
-} {} {}} C:/Users/student/Desktop/ca2015_project1/Data_Memory.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Data_memory.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module Data_Memory
-
-Top level modules:
-	Data_Memory
-
 } {} {}} C:/Users/student/Desktop/ca2015_project1/ALU.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/ALU.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling module ALU
@@ -82,6 +75,20 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	Shift26
 
+} {} {}} C:/Users/student/Desktop/ca2015_project1/testbench.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/testbench.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module TestBench
+
+Top level modules:
+	TestBench
+
+} {} {}} C:/Users/student/Desktop/ca2015_project1/MUX32_2.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MUX32_2.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module MUX32_2
+
+Top level modules:
+	MUX32_2
+
 } {} {}} C:/Users/student/Desktop/ca2015_project1/Registers.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Registers.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling module Registers
@@ -109,13 +116,6 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 
 Top level modules:
 	CPU
-
-} {} {}} C:/Users/student/Desktop/ca2015_project1/testbench.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/testbench.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module TestBench
-
-Top level modules:
-	TestBench
 
 } {} {}} C:/Users/student/Desktop/ca2015_project1/MUX32_3.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MUX32_3.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
