@@ -20,9 +20,11 @@ always @(posedge clk_i)begin
 	if(Flush_i ==1'b0)begin
 	   PC_o = PC_i;
 	   ReadData_o = ReadData_i;
-	else
+	end
+	else begin
 	   PC_o = 1'b0;
 	   ReadData_o = 32'b0;
+	end
    end
 
 end
