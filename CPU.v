@@ -17,7 +17,7 @@ wire	[4:0]	MEM_WB_MUX3_o, EX_MEM_MUX3_o;
 wire 	[2:0]	ID_EX_M_o;
 wire	[1:0]	EX_MEM_WB_o;
 wire	JUMP;
-wire	MEM_WB_WB_o_1;
+wire	MEM_WB_WB_o_1, MEM_WB_WB_o_2;
 wire	and_gate_o, and_gate1_i, and_gate2_i;			
 and	and_gate(and_gate_o, and_gate1_i, and_gate2_i);		//and_gate2_i = branch
 
@@ -46,7 +46,7 @@ Adder Add(
 MUX32_2 MUX1(
 	.data1_i	(Add.data_o),
 	.data2_i	(Add_PC_o),
-	.control_i	(and_gate_o),				
+	.control_i	(~and_gate_o),				
 	.data_o		(MUX1_o)
 );
 
@@ -74,7 +74,7 @@ MUX32_2 MUX4(
 MUX32_2 MUX5(
 	.data1_i	(MEM_WB.ReadData_o),
 	.data2_i	(MEM_WB.addr_o),
-	.control_i	(MEM_WB.WB_o_2),
+	.control_i	(~MEM_WB_WB_o_2),
 	.data_o		(MUX5_o)
 );
 
@@ -144,7 +144,7 @@ Sign_Extend Sign_Extend(
 Eq Eq(
 	.data1_i	(Reg_RS),
 	.data2_i	(Reg_RT),
-	.data_o		(and_gate1_1)
+	.data_o		(and_gate1_i)
 );
 
 HD HD(
@@ -206,7 +206,8 @@ IF_ID IF_ID(
 	.ReadData_i	(Instruction_Memory.instr_o),
 	.ReadData_o	(inst),
 	.HD_i		(HD.IF_ID_o),
-	.Flush_i	(or_gate_o)
+	.Flush_i	(or_gate_o),
+	.Flush_o	()
 );
 
 ID_EX ID_EX(
@@ -255,7 +256,7 @@ MEM_WB MEM_WB(
 	.clk_i	(clk_i),
 	.WB_i		(EX_MEM_WB_o),
 	.WB_o_1		(MEM_WB_WB_o_1),
-	.WB_o_2		(MUX5.control_i),	//MemToReg
+	.WB_o_2		(MEM_WB_WB_o_2),	//MemToReg
 	.ReadData_i	(Data_Memory.ReadData_o),
 	.ReadData_o	(MUX5.data1_i),
 	.addr_i		(EX_MEM_ALU_o),

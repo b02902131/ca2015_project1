@@ -17,9 +17,9 @@ output  [31:0]      pc_o;
 reg     [31:0]      pc_o;
 
 
-always@(posedge clk_i or hd_i) begin
+always@(posedge clk_i) begin
     if(hd_i) begin
-	pc_o <= 32'b0;
+	pc_o <= pc_o;
 	end
     else begin
     	

@@ -25,7 +25,7 @@ always@(Op_i) begin
 	if(Op_i == 6'b000000) begin	//R-type
 		RegWrite_o = 1'b1;
 		RegDst_o = 1'b1;
-		ALUOp_o = 2'b10;
+		ALUOp_o = 2'b11;
 		ALUSrc_o = 1'b0;
 	end
 	else if(Op_i == 6'b100011) begin	// lw
@@ -68,9 +68,9 @@ always@(Op_i) begin
 	MUX8_o[7] = MemtoReg_o;
 	MUX8_o[5] = MemRead;
 	MUX8_o[4] = MemWrite;
-	MUX8_o[3] = RegDst_o;
+	MUX8_o[3] = ALUSrc_o;
 	MUX8_o[2:1] = ALUOp_o;
-	MUX8_o[0] = ALUSrc_o;
+	MUX8_o[0] = RegDst_o;
 
 end
 
