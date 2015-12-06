@@ -19,7 +19,7 @@ input   [1:0]   WB_i;
 input   ReadData_i;
 output reg WB_o_1, WB_o_2, ReadData_o;
 input   addr_i, MUX3_i;
-output reg addr_o, MUX3_o;
+output reg [31:0] addr_o, MUX3_o;
 
 
 //10 //11 lw //00 bubble

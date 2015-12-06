@@ -8,7 +8,7 @@ module Data_memory(
 
 // Interface
 input   [31:0]      Addr_i, WriteData_i;
-output  [31:0]      ReadData_o;
+output  reg [31:0]      ReadData_o;
 input   MemWrite_i, MemRead_i;
 
 // Data memory

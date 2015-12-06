@@ -51,13 +51,13 @@ r1
 R3
 n@a@l@u
 vALU_Control
-Z4 !s110 1449386404
+!s110 1449386404
 !i10b 1
 !s100 [X6eCXL40IgeHKWlS3oM^0
 I7NV9:X^6ldl]5YddidOl73
 R0
 R1
-Z5 w1449384384
+w1449384384
 8C:/Users/student/Desktop/ca2015_project1/ALU_Control.v
 FC:/Users/student/Desktop/ca2015_project1/ALU_Control.v
 L0 1
@@ -93,13 +93,13 @@ r1
 R3
 n@control
 vCPU
-!s110 1449388538
+!s110 1449389368
 !i10b 1
-!s100 N73JbAAAa^oalV;bi?E050
-I7LHa?G<>zgAKWDj4768jB2
+!s100 dFkdB`R0LmPoTG7>IC3_W0
+ITlD3FNG;]XNSV]jh7moS02
 R0
 R1
-w1449387964
+w1449389357
 8C:/Users/student/Desktop/ca2015_project1/CPU.v
 FC:/Users/student/Desktop/ca2015_project1/CPU.v
 L0 1
@@ -107,30 +107,51 @@ R2
 r1
 !s85 0
 31
-!s108 1449388538.231000
+!s108 1449389368.278000
 !s107 C:/Users/student/Desktop/ca2015_project1/CPU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/CPU.v|
 !i113 1
 R3
 n@c@p@u
-vData_memory
-!s110 1449386999
+vData_Memory
+!s110 1449389419
 !i10b 1
-!s100 :V?2_[ED98IfhNGj[Shij1
-IbV6cocU2AgimidneNEn>_1
+!s100 _WW6b1RkJb?f`[3Z=HMac0
+IKVi1zAbTe7]G2U0_1G_V53
 R0
 R1
-w1449386997
-8C:/Users/student/Desktop/ca2015_project1/Data_memory.v
-FC:/Users/student/Desktop/ca2015_project1/Data_memory.v
+w1449389417
+Z4 8C:/Users/student/Desktop/ca2015_project1/Data_Memory.v
+Z5 FC:/Users/student/Desktop/ca2015_project1/Data_Memory.v
 L0 1
 R2
 r1
 !s85 0
 31
-!s108 1449386999.025000
-!s107 C:/Users/student/Desktop/ca2015_project1/Data_memory.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Data_memory.v|
+!s108 1449389419.150000
+Z6 !s107 C:/Users/student/Desktop/ca2015_project1/Data_Memory.v|
+Z7 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Data_Memory.v|
+!i113 1
+R3
+n@data_@memory
+vData_memory
+!s110 1449389318
+!i10b 1
+!s100 :V?2_[ED98IfhNGj[Shij1
+IImY=o8g96k5=`No<190cB2
+R0
+R1
+w1449386997
+R4
+R5
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1449389318.124000
+R6
+R7
 !i113 1
 R3
 n@data_memory
@@ -156,13 +177,13 @@ r1
 R3
 n@eq
 vEX_MEM
-!s110 1449387029
+!s110 1449390057
 !i10b 1
-!s100 :6Og]LGM]fkNaEX:bTNVQ1
-IXKSU0=R;ZGWIc?AN<kfEA0
+!s100 8VL1z8dU]T@fgLKJHeIGB0
+Ih[R?I4b=PnXRJ<2l<J??o1
 R0
 R1
-w1449387027
+w1449390056
 8C:/Users/student/Desktop/ca2015_project1/EX_MEM.v
 FC:/Users/student/Desktop/ca2015_project1/EX_MEM.v
 L0 1
@@ -170,7 +191,7 @@ R2
 r1
 !s85 0
 31
-!s108 1449387029.399000
+!s108 1449390057.911000
 !s107 C:/Users/student/Desktop/ca2015_project1/EX_MEM.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/EX_MEM.v|
 !i113 1
@@ -282,13 +303,13 @@ r1
 R3
 n@instruction_@memory
 vMEM_WB
-!s110 1449386850
+!s110 1449389940
 !i10b 1
-!s100 E]303o9hzJ?A:KBo`j_UL0
-I>M;f?Ue:GBl[UH0H8bn2S3
+!s100 PV0=><@<9Fj=@CA^jQ23R1
+I>?hAJ3zQ8Ic_j<3;Z]mnQ3
 R0
 R1
-w1449386848
+w1449389891
 8C:/Users/student/Desktop/ca2015_project1/MEM_WB.v
 FC:/Users/student/Desktop/ca2015_project1/MEM_WB.v
 L0 1
@@ -296,7 +317,7 @@ R2
 r1
 !s85 0
 31
-!s108 1449386850.652000
+!s108 1449389940.973000
 !s107 C:/Users/student/Desktop/ca2015_project1/MEM_WB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/MEM_WB.v|
 !i113 1
@@ -436,16 +457,16 @@ IclFBLNGcO=kH>[N><FnFD2
 R0
 R1
 w1449387183
-Z6 8C:/Users/student/Desktop/ca2015_project1/Shift26.v
-Z7 FC:/Users/student/Desktop/ca2015_project1/Shift26.v
+Z8 8C:/Users/student/Desktop/ca2015_project1/Shift26.v
+Z9 FC:/Users/student/Desktop/ca2015_project1/Shift26.v
 L0 1
 R2
 r1
 !s85 0
 31
 !s108 1449387185.149000
-Z8 !s107 C:/Users/student/Desktop/ca2015_project1/Shift26.v|
-Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Shift26.v|
+Z10 !s107 C:/Users/student/Desktop/ca2015_project1/Shift26.v|
+Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/Shift26.v|
 !i113 1
 R3
 n@shift
@@ -457,16 +478,16 @@ IXk;nZ>o0JJK^neG`Acgg01
 R0
 R1
 w1449387727
-R6
-R7
+R8
+R9
 L0 1
 R2
 r1
 !s85 0
 31
 !s108 1449387788.332000
-R8
-R9
+R10
+R11
 !i113 1
 R3
 n@shift26
@@ -513,13 +534,13 @@ r1
 R3
 n@signed_@extend
 vTestBench
-R4
+!s110 1449389746
 !i10b 1
 !s100 I`n[LKdDI97cT0Am6GZ[c0
 I]aW6NWj?[DKnbdX8]^cWT0
 R0
 R1
-R5
+w1449389668
 8C:/Users/student/Desktop/ca2015_project1/testbench.v
 FC:/Users/student/Desktop/ca2015_project1/testbench.v
 L0 3
@@ -527,7 +548,7 @@ R2
 r1
 !s85 0
 31
-!s108 1449386404.711000
+!s108 1449389746.925000
 !s107 C:/Users/student/Desktop/ca2015_project1/testbench.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/student/Desktop/ca2015_project1/testbench.v|
 !i113 1

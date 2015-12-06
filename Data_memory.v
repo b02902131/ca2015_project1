@@ -1,4 +1,4 @@
-module Data_memory(
+module Data_Memory(
 	MemWrite_i,
 	MemRead_i,
 	Addr_i,

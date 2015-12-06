@@ -185,7 +185,7 @@ FW FW(
 	.MUX7_o		(MUX7.control_i)	
 );
 
-Data_memory Data_memory(
+Data_memory Data_Memory(
 	.MemWrite_i	(EX_MEM.M_o_2),
 	.MemRead_i	(EX_MEM.M_o_1),
 	.Addr_i		(EX_MEM_ALU_o),
@@ -246,7 +246,7 @@ EX_MEM EX_MEM(
 	.MUX3_o		(EX_MEM_MUX3_o)
 );
 
-MEM_W MEM_WB(
+MEM_WB MEM_WB(
 	.clk_i	(clk_i),
 	.WB_i		(EX_MEM_WB_o),
 	.WB_o_1		(MEM_WB_WB_o_1),
