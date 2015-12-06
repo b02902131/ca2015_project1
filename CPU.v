@@ -1,7 +1,7 @@
 module CPU(
 	clk_i,
 	rst_i,
-	start_i,
+	start_i
 );
 
 input	clk_i,rst_i,start_i;
