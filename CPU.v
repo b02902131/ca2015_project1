@@ -1,9 +1,26 @@
 module CPU(
 	clk_i,
-	start_i
+	start_i,
+	rst_i,
+
+	mem_data_i, 
+	mem_ack_i, 	
+	mem_data_o, 
+	mem_addr_o, 	
+	mem_enable_o, 
+	mem_write_o
 );
 
-input	clk_i,start_i;
+input	clk_i,start_i,rst_i;
+//
+// to Data Memory interface		
+//
+input	[256-1:0]	mem_data_i; 
+input				mem_ack_i; 	
+output	[256-1:0]	mem_data_o; 
+output	[32-1:0]	mem_addr_o; 	
+output				mem_enable_o; 
+output				mem_write_o; 
 
 wire	[31:0]	Add_PC_o, PC_o, IF_ID_PC_o;
 wire	[31:0]	MUX7_o, MUX1_o, MUX5_o;
@@ -100,13 +117,33 @@ MUX8 MUX8(
 	.control_i	(HD.MUX8_o),
 	.data_o		(MUX8_o)
 );
-
+/*
 PC PC(
 	.clk_i	(clk_i),
 	.start_i(start_i),
 	.pc_i	(MUX2.data_o),
 	.pc_o	(PC_o),
 	.hd_i	(HD.PC_o)
+);*/
+PC PC(
+	.clk_i	(clk_i),
+   	.rst_i	(rst_i),
+	.start_i	(start_i),
+	.stall_i	(HD.PC_o),		//original hd
+	.pcEnable_i	(),
+	.pc_i	(MUX2.data_o),
+	.pc_o	(PC_o)
+);
+
+module PC
+(
+	clk_i,
+   	rst_i,
+	start_i,
+	stall_i,
+	pcEnable_i,
+	pc_i,
+	pc_o
 );
 
 Instruction_Memory Instruction_Memory(
@@ -153,7 +190,7 @@ HD HD(
 	.inst_i		(inst),
 	.MUX8_o		(MUX8.control_i),
 	.ID_EX_inst4	(ID_EX_inst4_o),
-	.PC_o		(PC.hd_i)
+	.PC_o		(PC.stall_i)
 );
 
 Control Control(
@@ -162,6 +199,8 @@ Control Control(
 	.Branch_o	(and_gate2_i),
 	.Jump_o		(JUMP)
 );
+
+
 
 ALU ALU(
 	.data1_i	(MUX6.data_o),
@@ -188,14 +227,6 @@ FW FW(
 	.data6_i	(ID_EX.inst2_o),
 	.MUX6_o		(MUX6.control_i),
 	.MUX7_o		(MUX7.control_i)	
-);
-
-Data_Memory Data_Memory(
-	.MemWrite_i	(EX_MEM.M_o_2),
-	.MemRead_i	(EX_MEM.M_o_1),
-	.Addr_i		(EX_MEM_ALU_o),
-	.WriteData_i	(EX_MEM.MUX7_o),
-	.ReadData_o	(MEM_WB.ReadData_i)
 );
 
 
@@ -263,6 +294,25 @@ MEM_WB MEM_WB(
 	.addr_o		(MUX5.data2_i),
 	.MUX3_i		(EX_MEM_MUX3_o),
 	.MUX3_o		(MEM_WB_MUX3_o)
+);
+/*Data_Memory Data_Memory(
+	.MemWrite_i	(EX_MEM.M_o_2),
+	.MemRead_i	(EX_MEM.M_o_1),
+	.Addr_i		(EX_MEM_ALU_o),
+	.WriteData_i	(EX_MEM.MUX7_o),
+	.ReadData_o	(MEM_WB.ReadData_i)
+);*/
+//TODO:DATA_O!!!!!
+Data_Memory Data_Memory
+(
+	.clk_i	(clk_i),
+	.rst_i	(rst_i),
+	.addr_i	(EX_MEM_ALU_o),
+	.data_i	(EX_MEM.MUX7_o),	//256!
+	.enable_i	(),
+	.write_i	(EX_MEM.M_o_2),
+	.ack_o	(),
+	.data_o	()
 );
 
 endmodule
