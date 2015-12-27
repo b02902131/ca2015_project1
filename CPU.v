@@ -34,6 +34,7 @@ wire	[4:0]	MEM_WB_MUX3_o, EX_MEM_MUX3_o;
 wire 	[2:0]	ID_EX_M_o;
 wire	[1:0]	EX_MEM_WB_o;
 wire	JUMP;
+wire	MemStall;
 wire	MEM_WB_WB_o_1, MEM_WB_WB_o_2;
 wire	and_gate_o, and_gate1_i, and_gate2_i;			
 and	and_gate(and_gate_o, and_gate1_i, and_gate2_i);		//and_gate2_i = branch
@@ -130,7 +131,7 @@ PC PC(
    	.rst_i	(rst_i),
 	.start_i	(start_i),
 	.stall_i	(HD.PC_o),		//original hd
-	.pcEnable_i	(),
+	.pcEnable_i	(MemStall),		//TODO:check!!!!
 	.pc_i	(MUX2.data_o),
 	.pc_o	(PC_o)
 );
@@ -238,7 +239,8 @@ IF_ID IF_ID(
 	.ReadData_o	(inst),
 	.HD_i		(HD.IF_ID_o),
 	.Flush_i	(or_gate_o),
-	.Flush_o	()
+	.Flush_o	(),
+	.stall		(MemStall)
 );
 
 ID_EX ID_EX(
@@ -265,7 +267,8 @@ ID_EX ID_EX(
 	.inst2_o	(FW.data6_i),
 	.inst3_o	(FW.data5_i),
 	.inst4_o	(ID_EX_inst4_o),
-	.inst5_o	(MUX3.data2_i)
+	.inst5_o	(MUX3.data2_i),
+	.stall		(MemStall)
 );
 
 EX_MEM EX_MEM(
@@ -273,14 +276,15 @@ EX_MEM EX_MEM(
 	.WB_i		(ID_EX.WB_o),
 	.WB_o		(EX_MEM_WB_o),
 	.M_i		(ID_EX_M_o),
-	.M_o_1		(Data_Memory.MemRead_i),
-	.M_o_2		(Data_Memory.MemWrite_i),
+	.M_o_1		(dcache.p1_MemRead_i),
+	.M_o_2		(dcache.p1_MemWrite_i),
 	.ALU_i		(ALU.data_o),
 	.ALU_o		(EX_MEM_ALU_o),
 	.MUX7_i		(MUX7_o),
-	.MUX7_o		(Data_Memory.WriteData_i),	//WriteData_o
+	.MUX7_o		(dcache.p1_data_i),	//WriteData_o
 	.MUX3_i		(MUX3.data_o),
-	.MUX3_o		(EX_MEM_MUX3_o)
+	.MUX3_o		(EX_MEM_MUX3_o),
+	.stall		(MemStall)
 );
 
 MEM_WB MEM_WB(
@@ -288,13 +292,15 @@ MEM_WB MEM_WB(
 	.WB_i		(EX_MEM_WB_o),
 	.WB_o_1		(MEM_WB_WB_o_1),
 	.WB_o_2		(MEM_WB_WB_o_2),	//MemToReg
-	.ReadData_i	(Data_Memory.ReadData_o),
+	.ReadData_i	(dcache.p1_data_o),
 	.ReadData_o	(MUX5.data1_i),
 	.addr_i		(EX_MEM_ALU_o),
 	.addr_o		(MUX5.data2_i),
 	.MUX3_i		(EX_MEM_MUX3_o),
-	.MUX3_o		(MEM_WB_MUX3_o)
+	.MUX3_o		(MEM_WB_MUX3_o),
+	.stall		(MemStall)
 );
+//old
 /*Data_Memory Data_Memory(
 	.MemWrite_i	(EX_MEM.M_o_2),
 	.MemRead_i	(EX_MEM.M_o_1),
@@ -302,17 +308,27 @@ MEM_WB MEM_WB(
 	.WriteData_i	(EX_MEM.MUX7_o),
 	.ReadData_o	(MEM_WB.ReadData_i)
 );*/
-//TODO:DATA_O!!!!!
-Data_Memory Data_Memory
+//data cache
+dcache_top dcache
 (
-	.clk_i	(clk_i),
-	.rst_i	(rst_i),
-	.addr_i	(EX_MEM_ALU_o),
-	.data_i	(EX_MEM.MUX7_o),	//256!
-	.enable_i	(),
-	.write_i	(EX_MEM.M_o_2),
-	.ack_o	(),
-	.data_o	()
+    // System clock, reset and stall
+	.clk_i(clk_i), 
+	.rst_i(rst_i),
+	
+	// to Data Memory interface		
+	.mem_data_i(mem_data_i), 
+	.mem_ack_i(mem_ack_i), 	
+	.mem_data_o(mem_data_o), 
+	.mem_addr_o(mem_addr_o), 	
+	.mem_enable_o(mem_enable_o), 
+	.mem_write_o(mem_write_o), 
+	
+	// to CPU interface	
+	.p1_data_i(EX_MEM.MUX7_o), 
+	.p1_addr_i(EX_MEM_ALU_o), 	
+	.p1_MemRead_i(EX_MEM.M_o_1), 
+	.p1_MemWrite_i(EX_MEM.M_o_2), 
+	.p1_data_o(MEM_WB.ReadData_i), 
+	.p1_stall_o(MemStall)	//TODO!!
 );
-
 endmodule
