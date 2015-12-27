@@ -11,5 +11,7 @@ TODO:
 	pc hd_i
 	IF_ID
 
+try project2
+
 
 try use window's git bash
