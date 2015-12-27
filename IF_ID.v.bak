@@ -6,10 +6,12 @@ module IF_ID(
 	HD_i,
 	Flush_i,
 	Flush_o,
-    	clk_i
+    	clk_i,
+	stall	
 );
 
 //Ports
+input	stall;
 input   [31:0]	PC_i;
 input 	[31:0]	ReadData_i;
 input   HD_i, Flush_i, clk_i;
@@ -18,6 +20,7 @@ output reg [31:0]	PC_o;
 output reg [31:0]	ReadData_o;
 
 always @(posedge clk_i)begin
+   Flush_o = 1'b0;
    if(HD_i == 1'b1) begin
 	PC_o = PC_o;
 	ReadData_o = ReadData_o;

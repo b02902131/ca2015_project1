@@ -34,6 +34,7 @@ wire	[4:0]	MEM_WB_MUX3_o, EX_MEM_MUX3_o;
 wire 	[2:0]	ID_EX_M_o;
 wire	[1:0]	EX_MEM_WB_o;
 wire	JUMP;
+wire	MemStall;
 wire	MEM_WB_WB_o_1, MEM_WB_WB_o_2;
 wire	and_gate_o, and_gate1_i, and_gate2_i;			
 and	and_gate(and_gate_o, and_gate1_i, and_gate2_i);		//and_gate2_i = branch
@@ -130,7 +131,7 @@ PC PC(
    	.rst_i	(rst_i),
 	.start_i	(start_i),
 	.stall_i	(HD.PC_o),		//original hd
-	.pcEnable_i	(),
+	.pcEnable_i	(MemStall),		//TODO:check!!!!
 	.pc_i	(MUX2.data_o),
 	.pc_o	(PC_o)
 );
@@ -238,7 +239,8 @@ IF_ID IF_ID(
 	.ReadData_o	(inst),
 	.HD_i		(HD.IF_ID_o),
 	.Flush_i	(or_gate_o),
-	.Flush_o	()
+	.Flush_o	(),
+	.stall		(MemStall)
 );
 
 ID_EX ID_EX(
@@ -265,7 +267,8 @@ ID_EX ID_EX(
 	.inst2_o	(FW.data6_i),
 	.inst3_o	(FW.data5_i),
 	.inst4_o	(ID_EX_inst4_o),
-	.inst5_o	(MUX3.data2_i)
+	.inst5_o	(MUX3.data2_i),
+	.stall		(MemStall)
 );
 
 EX_MEM EX_MEM(
@@ -280,7 +283,8 @@ EX_MEM EX_MEM(
 	.MUX7_i		(MUX7_o),
 	.MUX7_o		(dcache.p1_data_i),	//WriteData_o
 	.MUX3_i		(MUX3.data_o),
-	.MUX3_o		(EX_MEM_MUX3_o)
+	.MUX3_o		(EX_MEM_MUX3_o),
+	.stall		(MemStall)
 );
 
 MEM_WB MEM_WB(
@@ -293,7 +297,8 @@ MEM_WB MEM_WB(
 	.addr_i		(EX_MEM_ALU_o),
 	.addr_o		(MUX5.data2_i),
 	.MUX3_i		(EX_MEM_MUX3_o),
-	.MUX3_o		(MEM_WB_MUX3_o)
+	.MUX3_o		(MEM_WB_MUX3_o),
+	.stall		(MemStall)
 );
 //old
 /*Data_Memory Data_Memory(
@@ -324,6 +329,6 @@ dcache_top dcache
 	.p1_MemRead_i(EX_MEM.M_o_1), 
 	.p1_MemWrite_i(EX_MEM.M_o_2), 
 	.p1_data_o(MEM_WB.ReadData_i), 
-	.p1_stall_o()	//TODO!!
+	.p1_stall_o(MemStall)	//TODO!!
 );
 endmodule

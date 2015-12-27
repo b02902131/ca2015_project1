@@ -22,10 +22,11 @@ module ID_EX(
 	inst2_o,
 	inst3_o,
 	inst4_o,
-	inst5_o
+	inst5_o,
+	stall
 );
 
-input clk_i;
+input clk_i, stall;
 input   [3:0]   EX_i;
 input   [1:0]WB_i;
 input	[2:0]M_i;
@@ -43,6 +44,10 @@ output  reg [31:0]MUX6_o, MUX7_o;
 
 
 always @(posedge clk_i) begin
+	if(stall == 1'b1) begin
+		
+	end
+	else begin
     WB_o = WB_i;
     M_o = M_i;
     //TODO EX!!
@@ -56,6 +61,7 @@ always @(posedge clk_i) begin
     inst5_o = inst5_i;
     MUX6_o  = ReadData1_i;
     MUX7_o  = ReadData2_i;
+	end
 end
 
 endmodule

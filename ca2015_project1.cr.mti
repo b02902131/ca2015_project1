@@ -12,13 +12,6 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	Shift
 
-} {} {}} C:/Users/student/Desktop/ca2015_project1/MEM_WB.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MEM_WB.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module MEM_WB
-
-Top level modules:
-	MEM_WB
-
 } {} {}} C:/Users/student/Desktop/ca2015_project1/MUX5_2.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/MUX5_2.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling module MUX5_2
@@ -33,12 +26,12 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	Control
 
-} {} {}} C:/Users/student/Desktop/ca2015_project1/ID_EX.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/ID_EX.v
+} {} {}} C:/Users/student/Desktop/ca2015_project1/Data_Memory.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Data_memory.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module ID_EX
+-- Compiling module Data_Memory
 
 Top level modules:
-	ID_EX
+	Data_Memory
 
 } {} {}} C:/Users/student/Desktop/ca2015_project1/dcache_top.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/dcache_top.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
@@ -54,26 +47,19 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 Top level modules:
 	ALU
 
+} {} {}} C:/Users/student/Desktop/ca2015_project1/PC.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/PC.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module PC
+
+Top level modules:
+	PC
+
 } {} {}} C:/Users/student/Desktop/ca2015_project1/dcache_data_sram.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/dcache_data_sram.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling module dcache_data_sram
 
 Top level modules:
 	dcache_data_sram
-
-} {} {}} C:/Users/student/Desktop/ca2015_project1/EX_MEM.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/EX_MEM.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module EX_MEM
-
-Top level modules:
-	EX_MEM
-
-} {} {}} C:/Users/student/Desktop/ca2015_project1/IF_ID.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/IF_ID.v
-Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
--- Compiling module IF_ID
-
-Top level modules:
-	IF_ID
 
 } {} {}} C:/Users/student/Desktop/ca2015_project1/dcache_tag_sram.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/dcache_tag_sram.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
@@ -88,6 +74,31 @@ Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
 
 Top level modules:
 	Shift26
+
+} {} {}} C:/Users/student/Desktop/ca2015_project1/CPU.v {0 {vlog -work work -stats=none {C:\Users\student\Desktop\ca2015_project1\CPU.v}
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module CPU
+-- Compiling module PC
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(144): (vlog-2730) Undefined variable: 'stall_i'.
+
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(144): Identifier must be declared with a port mode: stall_i.
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(145): (vlog-2730) Undefined variable: 'pcEnable_i'.
+
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(145): Identifier must be declared with a port mode: pcEnable_i.
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(146): (vlog-2730) Undefined variable: 'pc_i'.
+
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(146): Identifier must be declared with a port mode: pc_i.
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(147): (vlog-2730) Undefined variable: 'pc_o'.
+
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(147): Identifier must be declared with a port mode: pc_o.
+** Error: C:\Users\student\Desktop\ca2015_project1\CPU.v(335): near "EOF": syntax error, unexpected end of source code
+
+} {5.0 6.0 7.0 9.0 10.0 12.0 13.0 15.0 16.0 18.0} {}} C:/Users/student/Desktop/ca2015_project1/testbench.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/testbench.v
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module TestBench
+
+Top level modules:
+	TestBench
 
 } {} {}} C:/Users/student/Desktop/ca2015_project1/Sign_Extend.v {1 {vlog -work work -stats=none C:/Users/student/Desktop/ca2015_project1/Sign_Extend.v
 Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
