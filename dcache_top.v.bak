@@ -168,7 +168,7 @@ always@(posedge clk_i or negedge rst_i) begin
 			STATE_MISS: begin
 				if(sram_dirty) begin		//write back if dirty
 	                // !!! add you code here! 
-					write_back <= 1'b1;
+					wirte_back <= 1'b1;
 					mem_write <= 1'b1;
 					state <= STATE_WRITEBACK;
 				end
