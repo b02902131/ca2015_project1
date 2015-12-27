@@ -136,16 +136,6 @@ PC PC(
 	.pc_o	(PC_o)
 );
 
-module PC
-(
-	clk_i,
-   	rst_i,
-	start_i,
-	stall_i,
-	pcEnable_i,
-	pc_i,
-	pc_o
-);
 
 Instruction_Memory Instruction_Memory(
 	.addr_i	(PC_o),

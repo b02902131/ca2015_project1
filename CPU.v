@@ -131,7 +131,7 @@ PC PC(
    	.rst_i	(rst_i),
 	.start_i	(start_i),
 	.stall_i	(HD.PC_o),		//original hd
-	.pcEnable_i	(MemStall),		//TODO:check!!!!
+	.pcEnable_i	(~MemStall),		//TODO:check!!!!
 	.pc_i	(MUX2.data_o),
 	.pc_o	(PC_o)
 );
